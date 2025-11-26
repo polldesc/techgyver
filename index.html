@@ -9,30 +9,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Meta Tags for Thumbnail Image -->
-    <meta property="og:image" content="https://polldesc.github.io/techgyver/techgyver.jpg">
-    <meta name="twitter:image" content="https://polldesc.github.io/techgyver/techgyver.jpg">
+    <meta property="og:image" content="https://polldesc.github.io/techgyver/resources/techgyver.jpg">
+    <meta name="twitter:image" content="https://polldesc.github.io/techgyver/resources/techgyver.jpg">
 
     <style>
         /* General Styles (unchanged from previous example) */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Courier', sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
-            line-height: 1.6;
-            background-image: url('background.jpg'); /* Keep background image */
+            color: #222222;
+            line-height: 1.4;
+            background-image: url('resources/background.jpg'); /* Keep background image */
             background-size: cover;
             background-position: center;
         }
         header {
-            background-color: #001BB7;
+            background-color: #FF6D1F;
             color: #fff;
             padding: 2rem 0;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         nav {
-            background-color: #393D7E;
+            background-color: #234C6A;
             color: #fff;
             padding: 0.5rem 0;
             text-align: center;
@@ -45,10 +45,10 @@
             transition: background-color 0.3s ease;
         }
         nav a:hover {
-            background-color: #555;
+            background-color: #FF6D1F;
         }
         .intro, .about, .projects, .contact-info { /* Apply width to all sections */
-            background-color: #393D7E; /* Dark theme background for intro */
+            background-color: #456882; /* Dark theme background for intro */
             color: #fff; /* White text for intro */
             padding: 3rem 1rem;
             text-align: center;
@@ -87,32 +87,48 @@
         }
 
         /* Projects Styles */
+        .projects {
+            overflow: auto; /* Enable scrollable pane */
+        }
         .projects-gallery {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-start; /* Align items to the start */
             padding: 1rem 0;
         }
         .project-item {
-            width: 30%; /* Adjust for desired number of columns */
+            width: 20%; /* Thumbnail size 20% */
             margin: 0.5rem;
             border: 1px solid #ddd;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            flex: none; /* Prevent items from growing */
+            transition: transform 0.3s ease; /* Add transition for animation */
+            height: 150px; /* ADDED: Fixed height for all thumbnails */
         }
+
+        .project-item:hover {
+            transform: scale(1.1); /* Scale up on hover */
+        }
+
+        .project-item a {
+            display: block;
+            height: 100%; /* ADDED: Make the link fill the project item */
+        }
+
         .project-item img {
             width: 100%;
-            height: auto;
+            height: 100%; /* ADDED: Make the image fill the container */
+            object-fit: cover; /* ADDED: Maintain aspect ratio and cover the area */
             display: block;
         }
+        /* REMOVE PROJECT DESCRIPTIONS */
         .project-item p {
-            padding: 0.5rem;
-            text-align: center;
-            color: #fff; /* White text for project descriptions */
+            display: none; /* Remove project descriptions */
         }
         footer {
-            background-color: #2a623d;
+            background-color: #FF6D1F;
             color: #fff;
             text-align: center;
             padding: 1rem 0;
@@ -170,8 +186,8 @@
             }
             /* Mobile adjustments for projects gallery */
             .project-item {
-                width: 90%;
-                margin: 0.5rem auto;
+                width: 45%; /* Two items per row on mobile */
+                 height: 100px; /* Adjust height for mobile */
             }
         }
     </style>
@@ -187,7 +203,7 @@
     </nav>
     <section class="intro">
         <h2>Ready to Engineer the Future?</h2>
-		<img src="techgyver.jpg" alt="TechGyver Photo">
+		<img src="resources/techgyver.jpg" alt="TechGyver Photo">
         <p>I'm James Erwin Damit, a passionate system engineer specializing in hardware programming, IoT solutions, and embedded systems. I thrive on challenges and am dedicated to crafting innovative, efficient, and scalable solutions that drive technological advancement. Explore my projects below and let's connect to build the next generation of smart devices!</p>
     </section>
     <section id="about" class="about">
@@ -198,21 +214,43 @@
         </p>
     </section>
     <section id="projects" class="projects">
+
+
         <h2>My Projects</h2>
         <div class="projects-gallery">
             <div class="project-item">
-                <img src="project1.jpg" alt="POLLD WLS for Flood Monitoring">
-                <p>POLLD WLS for Flood Monitoring</p>
+                <a href="projects/project1.jpg">
+                    <img src="projects/project1.jpg" alt="POLLD WLS for Flood Monitoring">
+                </a>
             </div>
             <div class="project-item">
-                <img src="project2.jpg" alt="Onsite installation and programming of WLS">
-                <p>Onsite installation and programming of WLS</p>
+                <a href="projects/project2.jpg">
+                    <img src="projects/project2.jpg" alt="Onsite installation and programming of WLS">
+                </a>
             </div>
             <div class="project-item">
-                <img src="project3.jpg" alt="LoRa Based Systems">
-                <p>LoRa Based Systems</p>
+                <a href="projects/project3.jpg">
+                    <img src="projects/project3.jpg" alt="LoRa Based Systems">
+                </a>
             </div>
+             <div class="project-item">
+                <a href="projects/project4.png">
+                    <img src="projects/project4.png" alt="POLLD WLS for Flood Monitoring">
+                </a>
+            </div>
+            <div class="project-item">
+                 <a href="projects/project5.jpg">
+                    <img src="projects/project5.jpg" alt="Onsite installation and programming of WLS">
+                </a>
+            </div>
+            <div class="project-item">
+                <a href="projects/project6.png">
+                    <img src="projects/project6.png" alt="LoRa Based Systems">
+                </a>
+            </div>             
         </div>
+
+
     </section>
     <section id="contact" class="contact-info">
         <h2>Contact Information</h2>
@@ -226,4 +264,3 @@
     </footer>
 </body>
 </html>
-
